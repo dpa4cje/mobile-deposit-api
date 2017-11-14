@@ -43,7 +43,7 @@ pipeline {
                 stash name: 'jar-dockerfile', includes: '**/target/*.jar,**/target/Dockerfile'
             }
         }
-        stage('Quality Analysis') {
+/*      stage('Quality Analysis') {
             agent { 
                 docker { 
                     image "beedemo/mobile-depoist-api-mvn-cache"
@@ -90,7 +90,7 @@ pipeline {
                     }
                 }
             }
-        }
+/*      }
         stage('Build & Push Docker Image') {
             environment {
                 DOCKER_TAG = "${BUILD_NUMBER}-${SHORT_COMMIT}"
